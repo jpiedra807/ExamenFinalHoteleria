@@ -1,0 +1,67 @@
+<div class="list-group ">
+  <h5 class="list-group-item title-filters">
+    <b>Filtros</b>
+  </h5>
+  <a data-toggle="collapse" data-target="#name" class="list-group-item active">
+    <i class="material-icons">search</i>
+    <b>Nombre de Hotel</b>
+  </a>
+  <div id="name" class="collapse show  fields-search">
+    <form class="form-inline search-form">
+      <div class="search">
+        <input class="form-control input-sm form-control-sm" [(ngModel)]="filters.name" name="name" placeholder="nombre del hotel...">
+        <button type="submit" (click)="filter()" class="btn btn-primary btn-sm">Aceptar</button>
+      </div>
+
+    </form>
+  </div>
+
+  <a data-toggle="collapse" data-target="#stars" class="list-group-item">
+    <i class="material-icons">star</i>
+    <b>Estrellas</b>
+  </a>
+  <div id="stars" class="collapse show fields-search">
+    <div class="filter-stars">
+      <div class="checkbox">
+        <label>
+          <input class="form-check-input" (change)="filter()" [(ngModel)]="stars.all" name="all" type="checkbox" checked>
+          <i class="material-icons stars">stars</i>
+          Todas las estrellas
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input class="form-check-input" (change)="filter()" [(ngModel)]="stars.five" name="five" type="checkbox" value="">
+          <i class="material-icons star">star star star star star</i>
+        </label>
+      </div>
+      <div class="checkbox">
+
+        <label>
+          <input class="form-check-input" (change)="filter()" [(ngModel)]="stars.four" name="four" type="checkbox" value="">
+          <i class="material-icons star">star star star star</i>
+        </label>
+      </div>
+      <div class="checkbox">
+
+        <label>
+          <input class="form-check-input" (change)="filter()" [(ngModel)]="stars.three" name="three" type="checkbox" value="">
+          <i class="material-icons star">star star star</i>
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input class="form-check-input" (change)="filter()" [(ngModel)]="stars.two" name="two" type="checkbox" value="">
+          <i class="material-icons star">star star</i>
+        </label>
+      </div>
+
+      <div class="checkbox">
+        <label>
+          <input class="form-check-input" (change)="filter()" [(ngModel)]="stars.one" name="one" type="checkbox" value="">
+          <i class="material-icons star">star</i>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

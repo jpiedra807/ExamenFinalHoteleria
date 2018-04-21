@@ -1,0 +1,136 @@
+.primary-color{
+    color: #007bff;
+}
+
+.second-color{
+    color: #DF7401;
+}
+
+.star{
+    color: orange;
+    padding-left: 15px;
+}
+.stars{
+    color: #DF7401;
+    padding-left: 15px;
+
+}
+
+
+
+strong{
+    font-size: 38px;
+}
+
+.btn-primary {
+    background-color: #08298A !important;
+    border-color: #08298A !important;
+}
+
+.btn-primary:hover {
+    background-color: #013ADF !important;
+    border-color: #013ADF !important;
+}
+
+.img-hotel{
+    width: 100% !important;
+    min-width: 280px  !important;
+    height: 170px;
+}
+
+.name-hotel, .amenities{
+    padding-left: 15px;
+    padding-top: 5px; 
+}
+
+.amenity{
+    padding-left: 8px;
+}
+
+.item-hotel{
+    position: relative;
+    padding: 15px;
+    right: 15px !important;
+    border: 1px solid #D8D8D8 ;
+  border-bottom: 0px;
+  margin-top:20px;
+  -webkit-box-shadow: 0 8px 6px -6px gray;
+	   -moz-box-shadow: 0 8px 6px -6px gray;
+	        box-shadow: 0 8px 6px -6px gray;
+}
+
+.search-form{
+    padding-top: 10px;
+}
+.list-group{
+    position: relative;
+    padding: 20px;
+}
+.list-group-item.active {
+    z-index: 2;
+    color: #007bff !important;
+    background-color: white !important;
+    border-color:#D8D8D8 !important;
+    cursor: pointer;
+}
+
+.list-group-item {
+    z-index: 2;
+    color: #007bff !important;
+    background-color: white !important;
+    border-color:#D8D8D8 !important;
+    cursor: pointer;
+}
+
+.filter-stars{
+    padding-left: 40px;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  .fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeIn {
+    animation-name: fadeIn;
+  }
+
+body{
+    padding-bottom: 25px;
+}
+
+.title-filters{
+    color: black !important;
+}
+
+.result-search{
+    color: grey;
+}
+
+.fields-search{
+    border: 1px solid #D8D8D8 ;
+}
+
+.search{
+    padding-left: 15px;
+    padding-bottom: 10px;
+}
