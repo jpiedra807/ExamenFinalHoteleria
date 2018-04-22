@@ -1,0 +1,123 @@
+<!--Cuadro de mapas-->
+<div class="mapa sombra">
+    <figure>
+        <img src="./imgs/mapa.png">
+    </figure>
+    <div class="mapa_label">
+        <a href="#">Ver hoteles en el mapa</a>
+    </div>
+</div>
+<!--Cuadro de filtro-->
+<div class="filtro">
+    <span id="filtro_label">
+        <b>Filtrar</b>
+    </span>
+    <!--Filtrar por nombre-->
+    <div class="bloq_filtro" id="filter_name_div">
+        <div class="title_filtro">
+            <div class="filtro_izq">
+                <span class="glyphicon glyphicon-search"></span>&nbsp;
+                Nombre del hotel
+            </div>
+            <a ng-click="ctrl.mostrarNombre()" class="arrowLink">
+                <span ng-class="{'glyphicon glyphicon-triangle-top filtro_der':ctrl.controles.nombre.visible,'glyphicon glyphicon-triangle-bottom filtro_der':!ctrl.controles.nombre.visible}"></span>                                        
+            </a>
+        </div>
+        <div id="name_filtro" ng-show="ctrl.controles.nombre.visible">
+            <input type="text" placeholder="Ingrese el nombre del hotel" ng-model="ctrl.controles.nombre.texto" id="txt_name_filter">
+            <input type="button" value="Aceptar" class="boton_filtro" ng-click="ctrl.aplicarFiltros()">            
+        </div>
+    </div>
+    <!--Filtrar por rango de precios-->
+    <div class="bloq_filtro">
+        <div class="title_filtro">
+            <div class="filtro_izq">
+                <span class="glyphicon glyphicon-usd"></span>&nbsp;
+                Precio por noche
+            </div>
+            <a ng-click="ctrl.mostrarPrecio()" class="arrowLink">
+                <span ng-class="{'glyphicon glyphicon-triangle-top filtro_der':ctrl.controles.precio.visible,'glyphicon glyphicon-triangle-bottom filtro_der':!ctrl.controles.precio.visible}"></span>                                        
+            </a>
+        </div>                                                               
+        <div class="sliderUi" ng-show="ctrl.controles.precio.visible">
+            <div ui-slider="{range: true}" min="{{ctrl.controles.precio.min}}" max="{{ctrl.controles.precio.max}}" step="1" use-decimals ng-model="ctrl.controles.precio.rango" ng-change="ctrl.aplicarFiltros()"></div>
+            <div class="sliderUi_max_min">
+                <span class="sliderUi_min">${{ctrl.controles.precio.rango[0]}}</span>                                             
+                <span class="sliderUi_max">${{ctrl.controles.precio.rango[1]}}</span>
+            </div>
+        </div>                                                              
+    </div>
+    <!--Filtrar por estrellas-->
+    <div class="bloq_filtro">
+       <div class="title_filtro">
+            <div class="filtro_izq">
+                <span class="glyphicon glyphicon-star"></span>&nbsp;
+                Estrellas
+            </div>
+            <a ng-click="ctrl.mostrarEstrellas()" class="arrowLink">
+                <span ng-class="{'glyphicon glyphicon-triangle-top filtro_der':ctrl.controles.estrellas.visible,'glyphicon glyphicon-triangle-bottom filtro_der':!ctrl.controles.estrellas.visible}"></span>                                        
+            </a>                                    
+        </div>
+        <div class="estrellas" ng-show="ctrl.controles.estrellas.visible">
+            <ul>
+                <!--Todas-->
+                <li>
+                    <input type="checkbox"  ng-model="ctrl.controles.estrellas.flags.todas" ng-change="ctrl.aplicarFiltros()">
+                    <span>
+                        <b>Todas las estrellas ({{ctrl.controles.estrellas.flags.todasCont}})</b>
+                    </span>
+                </li>
+                <!--5-->
+                <li>
+                    <input type="checkbox" ng-model="ctrl.controles.estrellas.flags.cinco" ng-change="ctrl.aplicarFiltros()">
+                    <span class="starbloq">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span> 
+                        &nbsp;({{ctrl.controles.estrellas.flags.cincoCont}})
+                    </span>
+                </li>
+                <!--4-->
+                <li>
+                    <input type="checkbox"  ng-model="ctrl.controles.estrellas.flags.cuatro" ng-change="ctrl.aplicarFiltros()">
+                    <span class="starbloq">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span> 
+                        &nbsp;({{ctrl.controles.estrellas.flags.cuatroCont}})
+                    </span>
+                </li>
+                <!--3-->
+                <li>
+                    <input type="checkbox"  ng-model="ctrl.controles.estrellas.flags.tres" ng-change="ctrl.aplicarFiltros()">
+                    <span class="starbloq">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        &nbsp;({{ctrl.controles.estrellas.flags.tresCont}})
+                    </span>
+                </li>
+                <!--2-->
+                <li>
+                    <input type="checkbox"  ng-model="ctrl.controles.estrellas.flags.dos" ng-change="ctrl.aplicarFiltros()">
+                    <span class="starbloq">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        &nbsp;({{ctrl.controles.estrellas.flags.dosCont}})
+                    </span>
+                </li>
+                <!--1-->
+                <li>
+                    <input type="checkbox"  ng-model="ctrl.controles.estrellas.flags.uno" ng-change="ctrl.aplicarFiltros()">
+                    <span class="starbloq">
+                        <span class="glyphicon glyphicon-star"></span>
+                        &nbsp;({{ctrl.controles.estrellas.flags.unoCont}})
+                    </span>
+                </li>                  
+            </ul>
+        </div>
+    </div>
+</div>
