@@ -20,7 +20,7 @@ const gulp = require('gulp'),
 gulp.task('connect', () => {
   connect.server({
     root: 'public',
-    port: 8000,
+    port: 3000,
     livereload: true
   });
   browserSync.init({
