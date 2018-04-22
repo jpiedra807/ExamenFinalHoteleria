@@ -1,0 +1,50 @@
+<div class="col-md-8 loader" ng-show="ctrl.loader">
+    <figure>
+        <img src="./imgs/loader.gif">
+    </figure>
+</div>
+
+<!--Lista de resultados-->
+<div class="resu_fila sombra" ng-repeat="hotel in ctrl.hoteles">
+    <div class="col-xs-8 col-md-8 item_izq">
+        <div class="col-xs-8 col-md-6 itemslider">
+            <div class="label_slider" ng-show="(hotel.valuable=='Recomendado')">
+                <b>¡Hotel recomendado!</b>
+            </div>
+            <div class="liston" ng-show="((!(hotel.oferta==null))&&(hotel.valuable==null))">
+                <b>{{hotel.oferta}}</b>
+            </div>
+            <div class="slider" style="background:white;">			
+                <carrousel ng-model="hotel.images"></carrousel>
+            </div>
+        </div>
+        <div class="col-xs-4 col-md-6" id="cols_name_services">
+            <span class="hotel_name">
+                {{hotel.name}}
+            </span>
+            <div class="starbloq">
+                <span class="glyphicon glyphicon-star" ng-repeat="n in ctrl.range(hotel.stars)"></span>
+            </div>
+            <span class="regimen">
+                <img src="./imgs/beds.png">&nbsp;{{hotel.boardbase}}
+            </span>
+            <div class="services">
+                <img src="./imgs/{{serv}}.png" ng-repeat="serv in hotel.services">
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-4 col-md-4 item_der">
+        <div class="label_price_noche">
+            Precio por noche por habitación
+        </div>
+        <div class="label_price_ars">
+            <span class="price_money">ARS</span>
+            <span class="price_number">{{hotel.price}}</span>
+        </div>
+        <div class="label_price_noche">Impuestos y tasas no incluidas</div>
+        <div class="button_item">
+            <div class="button_link">Ver hotel</div>
+        </div>
+        <div class="label_price_noche"><b>Paga en cuotas</b></div>                                
+    </div>
+</div>

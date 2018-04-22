@@ -1,0 +1,20 @@
+
+<div class="carrousel_container" ng-show="bindModel.length>0">
+   <div class="carrouse_div_btn_left">
+       <div class="carrousel_btn" ng-click="cc.prev()" ng-show="(cc.index>0)">
+            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+       </div>
+   </div>
+   <figure>
+    <img ng-src="{{bindModel[cc.index]}}">
+   </figure>
+   <div  class="carrouse_div_btn_rigth">
+       <div class="carrousel_btn"  ng-click="cc.sig()" ng-show="(bindModel.length>cc.index)">
+            <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+       </div>
+   </div>
+</div>
+
+<div style="height: 135px;background:white;" ng-show="bindModel==null">
+  <img src="./imgs/sin_img.jpg" ng-show="bindModel==null" style="height: 100%;width: 100%;">
+</div>
