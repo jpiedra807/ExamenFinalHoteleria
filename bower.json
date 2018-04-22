@@ -1,0 +1,23 @@
+{
+  "name": "mean-app",
+  "description": "MEAN stack application",
+  "main": "app.js",
+  "authors": [
+    "Full Stack Training"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "mean"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
