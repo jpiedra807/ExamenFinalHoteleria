@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Norone Hotels</title>
+
+  <!-- CSS Files -->
+  <!--<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+  <link rel="stylesheet" href="app.css">
+
+  <!-- JS resources -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.js" integrity="sha256-PJrjXIDP4QU/V1Lil8/aPULjeX9nT7sJX72RFCJVnMk=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js" integrity="sha256-OxCsGH/j2k+Ub6Lo55TiYwZ94bv9Jmgvbn7gDahtiIs=" crossorigin="anonymous"></script>
+  <!--<script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="node_modules/tether/dist/js/tether.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="node_modules/angular/angular.js"></script>-->
+
+  <script type="text/javascript" src="app.js"></script>
+</head>
+
+<body ng-app="hotelApp">
+  <!--page header section-->
+  <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <div class="container">
+
+      <a class="navbar-brand" href="#"><img src="images/nor1-logo.png" height="30" width="35" alt="Logo"> Norone Hotels</a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item active"><a class="nav-link" href="#">Reservation</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--page content-->
+  <div class="container" ng-controller="hotelCtrl">
+    <div class="card card-outline-primary" ng-show="!upgraded">
+      <h3 class="card-header">Room Details</h3>
+      <div class="card-block">
+        <div class="row">
+          <div class="col-sm-3">
+            <img ng-src="{{data.image_url}}" class="img-fluid" alt="Room">
+          </div>
+          <div class="col-sm-6">
+            <h4 class="card-title">
+              <span class="text-muted">Booked For: </span>
+              <span class="name">{{data.first_name}} {{data.last_name}}</span>
+            </h4>
+            <p class="card-text">{{data.short_desc}}</p>
+          </div>
+          <div class="col-sm-3 text-xs-right">
+            <h3 class="display-3">{{data.room_price | currency}}</h3>
+            <p class="lead">per night</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div ng-show="upgraded">
+      <p class="text-success">Congratulations! You have been upgraded successfully.</p>
+      <div class="card card-outline-primary">
+        <h3 class="card-header">Room Details</h3>
+        <div class="card-block">
+          <div class="row">
+          <div class="col-sm-3">
+            <img ng-src="{{upgradedData.image_url}}" class="img-fluid" alt="Room">
+          </div>
+          <div class="col-sm-6">
+            <h4 class="card-title">
+              <span class="text-muted">Booked For: </span>
+              <span class="name">{{upgradedData.first_name}} {{upgradedData.last_name}}</span>
+            </h4>
+            <ul class="list-unstyled">
+              <li class="card-text" ng-repeat="offer in upgradedData.offers">{{offer.short_desc}}</li>
+            </ul>
+          </div>
+          <div class="col-sm-3 text-xs-right">
+            <h3 class="display-3">{{upgradedData.room_price | currency}}</h3>
+            <p class="lead">per night</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-outline-primary" ng-show="offersFound && !upgraded">
+      <h3 class="card-header">Offers</h3>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action" ng-repeat="offer in offers" ng-click="toggleOffer(offer, $event)" ng-class="{active: offer.selected}">
+          <div class="row">
+            <div class="col-sm-2">
+              <img ng-src="{{offer.image_url}}" class="img-fluid" alt="offer image">
+            </div>
+            <div class="col-sm-7">
+              <h5 class="list-group-item-heading">{{offer.short_desc}}</h5>
+              <p class="list-group-item-text">{{offer.long_desc}}</p>
+            </div>
+            <div class="col-sm-3 text-xs-right">
+              <h4 class="display-4">{{offer.price_val}}</h4>
+              <p class="lead">{{offer.price_freq}}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="card-footer text-xs-center" ng-show="selectedOffers.length">
+        <a href="#" class="btn btn-danger" ng-click="removeSelected()">Reset</a>
+        <a href="#" class="btn btn-success" ng-click="upgrade()">Upgrade</a>
+      </div>
+    </div>
+
+    <div class="text-xs-center" ng-show="!offersFound">
+      <h5 style="color:red">{{noOfferText}}</h5>
+    </div>
+  </div>
+
+  <!--page footer section-->
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">&copy; Norone Hotels 2016</span>
+    </div>
+  </footer>
+</body>
+
+</html>

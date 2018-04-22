@@ -1,0 +1,27 @@
+{
+	"image_url": "https://www.norone.com/nor1images/h-008/000153/small/00001701.jpg",
+	"first_name": "Sameer",
+	"last_name": "Dash",
+	"email": "sd@gmail.com",
+	"room_code": "KING",
+	"item_id": 101,
+	"short_desc": "King Bed with Lanai Access",
+	"room_price": 209,
+	"offers": [
+		{
+	      "image_url": "https://www.norone.com/nor1images/h-008/000153/small/00001728.jpg",
+	      "short_desc": "Premier Suite with Lanai Access",
+	      "long_desc": "Enjoy this large open floor plan with dining area, living area including pullout sleeper sofa with attached King bedroom, wet bar, and refrigerator, featuring floor to ceiling windows with sliding glass door opening directly to a Sun Deck, ideal for meeting planners, executives or families looking for extra space.",
+	      "item_id": 102,
+	      "room_code": "SUITE",
+	      "price": 30
+	  },
+	  {
+	      "image_url": "https://www.norone.com/nor1images/h-026/000892/small/00011999.jpg",
+	      "short_desc": "Champagne and Strawberries",
+	      "long_desc": "Upon arrival, enjoy a combination of fresh strawberries and a bottle of chilled champagne from the comfort of your own guestroom.",
+	      "item_id": 103,
+	      "price": 50
+	  }
+	]
+}
