@@ -20,7 +20,7 @@ const gulp = require('gulp'),
 gulp.task('connect', () => {
   connect.server({
     root: 'public',
-    port: 3000,
+    port: 8000,
     livereload: true
   });
   browserSync.init({
@@ -74,8 +74,13 @@ gulp.task('dependencies', () => {
   gulp.src([
     './node_modules/ng-file-upload/dist/ng-file-upload.min.js',
     './node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js'
-    ])
+  ])
     .pipe(gulp.dest('./public/lib/ng-file-upload'));
+
+  gulp.src([
+    './node_modules/ngmap/build/scripts/ng-map.min.js'
+  ])
+    .pipe(gulp.dest('./public/lib/ng-map'));
 });
 
 gulp.task('reload', () => {

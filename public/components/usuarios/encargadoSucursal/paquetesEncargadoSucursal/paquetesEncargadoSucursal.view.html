@@ -1,0 +1,47 @@
+
+<section id="dashboard">
+
+  <div class="" id="viewonly">    
+    
+      <legend>Paquetes recibidos en sucursal</legend>
+    
+      <table class="table table-responsive">
+    
+        <thead>
+          <th>Usuario</th>
+          <th>Tracking</th>
+          <th>Distribuidor</th>
+          <th>Precio</th>
+          <th>Peso</th>
+          <th>Tipo de articulo</th>
+          <th>Descripción</th>
+          <th>Sucursal</th>
+          <th>Repartidores</th>
+      
+        </thead>
+        <tbody>
+          <tr ng-repeat="paquete in vm.listaPaquetes" ng-if="paquete.estadoTraslado === 'En Sucursal' && paquete.sucursal === vm.rolSucursal">
+            <td>{{paquete.usuario}}</td>
+            <td>{{paquete.tracking}}</td>
+            <td>{{paquete.distribuidor}}</td>
+            <td>{{paquete.precio}}</td>
+            <td>{{paquete.peso}}</td>
+            <td>{{paquete.tipoArticulo.name}}</td>
+            <td>{{paquete.descripcion}}</td>
+            <td>{{paquete.sucursal}}</td>
+            <td>
+            <select ng-model="nombre">
+              <option value="">Seleccione Repartidor</option>
+              <option value="{{repartidor.primerNombre}}" ng-repeat="repartidor in vm.listaRepartidores" ng-if="repartidor.sucursalAsignada == vm.rolSucursal">{{repartidor.primerNombre}}</option>
+            </select>
+            </td>
+            <td><button class="btn" type="button" ng-click="vm.asignarRepartidor(paquete,nombre)"><small>Asignar Repartidor</small> </button></td>
+          </tr>
+        </tbody>
+      
+      </table>
+
+  </div>
+
+</section>
+

@@ -1,0 +1,154 @@
+<div class="page">
+    <div class="headerclass">
+        <h4 class=""> Bienvenido: {{vm.usuarioActivo}}</h4>
+        <a ui-sref="logIn" ng-click="vm.cerrarSesion()" class="">Cerrar Sesión</a>
+        <a>
+            <i class="fas fa-sign-out-alt fixright" ng-click="vm.cerrarSesion()" ui-sref="logIn"></i>
+        </a>
+
+    </div>
+
+    <div id="nav-container">
+        <div class="bg"></div>
+        <div class="button" tabindex="0">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </div>
+        <div id="nav-content" tabindex="0">
+            <ul>
+                <!-- CLiente Usuario -->
+                <button type="button" class="btn btn-info" ng-show='vm.rol == 1' ui-sref="main.modificarCliente"><i class="fas fa-user float-left"></i>Mi Perfil</button>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#tarjetas" ng-show='vm.rol == 1'><i class="far fa-credit-card float-left"></i>Mis Tarjetas</button>
+                <div id="tarjetas" class="collapse">
+                    <ul>
+                        <li>
+                            <a ng-show='vm.rol == 1' ui-sref="main.tarjetas" class="text-capitalize">Registrar Tarjeta</a>
+                        </li>
+                        <li>
+                            <a ng-show='vm.rol == 1' ui-sref="main.listartarjetas" class="text-capitalize">Editar Mis Tarjetas</a>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#paquetes" ng-show='vm.rol == 1'><i class="fas fa-dolly float-left"></i>Paquetes</button>
+                <div id="paquetes" class="collapse">
+                    <ul>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 1' ui-sref="main.registrarPreAlerta">Crear Pre-alerta</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 1' ui-sref="main.listaPreAlerta">Historial Paquetes</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 1' ui-sref="main.listarPaquetesConvenio">Paquetes de convenio</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Administrador -->
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#registrosadmin" ng-show='vm.rol == 5'> Registros</button>
+                <div id="registrosadmin" class="collapse">
+                    <ul>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.registrarClienteAdmin">
+                                Registrar cliente</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.registrarEntidades">Registrar Entidades</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.registrarConvenio">Registrar Convenios</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.registrarEncargadoAduana">Registrar Encargado de Aduanas</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.repartidor">Registrar Repartidores</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.sucursales">Registar Sucursales</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.registrarEncargadoSucursal">Registrar encargado de sucursal</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.registrarArticulo">Registrar Articulo</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#listassadmin" ng-show='vm.rol == 5'> Listas</button>
+                <div id="listassadmin" class="collapse">
+                    <ul>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.listarCliente">Lista de clientes</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.listarEncargadoSucursal">Lista de Encargados de Sucursal</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.listarEntidades"> Lista de entidades</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.listarConvenios"> Lista de convenios</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.listarEncargadoAduana">Lista de Encargados de Aduanas</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.listarRepartidores">Lista de Repartidor</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.listarsucursales">Lista de Sucursales</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.listarArticulo">Lista de Articulos</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.articulosDesactivados">Lista de Articulos Desactivados</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.PaquetesAdmin">Lisa de Paquetes</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <button type="button" class="btn btn-info" ng-show='vm.rol == 4' ui-sref="main.paquetesEncargadoAduana">Paquetes</button>
+                <button type="button" class="btn btn-info" ng-show='vm.rol == 3' ui-sref="main.editarRepartidor">Editar Perfil</button>
+                <button type="button" class="btn btn-info" ng-show='vm.rol == 3' ui-sref="main.paquetesRepartidor">Paquetes</button>
+                <!-- <button type="button" class="btn btn-info" ng-show='vm.rol == 3' ui-sref="main.Repartidor">Paquetes</button> -->
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#encSucReg" ng-show='vm.rol == 2'> Registros</button>
+                <div id="encSucReg" class="collapse">
+                    <ul>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 2' ui-sref="main.repartidor">Registrar Repartidor</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 2' ui-sref="main.registrarPaquetesConvenio">Registrar paquete de convenio</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-info" ng-show='vm.rol == 2' ui-sref="main.listarRepartidoresSucursal">Repartidores</button>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#encSucPaq" ng-show='vm.rol == 2'> Paquetes</button>
+                <div id="encSucPaq" class="collapse">
+                    <ul>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 2' ui-sref="main.paquetesEncargadoSucursal">Paquetes clientes</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 2' ui-sref="main.listarPaquetesConvenio">Paquetes de convenio</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+
+            </ul>
+
+        </div>
+    </div>
+
+</div>

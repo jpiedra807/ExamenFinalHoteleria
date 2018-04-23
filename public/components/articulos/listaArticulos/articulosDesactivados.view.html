@@ -1,0 +1,54 @@
+<div navegacion-Principal></div>
+<div menu-Lateral></div>
+<section id="dashboard">
+  <div class="container">
+    <form class="row">
+      <div class=" col-xs-12 col-md-4">
+        <label for="">Buscar por Nombre</label>
+        <input type="text" class="form-control"ng-model="buscarArticulo" placeholder="ingrese metodo de busqueda">
+
+      </div>
+
+
+
+
+
+    </form>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            <a class="puntero" ng-click="columna = 'id'; reverse = !reverse">ID</a>
+            </tha>
+            <th>
+              <a class="puntero" ng-click="columna = 'producto'; reverse = !reverse">Nombre</a>
+            </th>
+            <th>
+              <a class="puntero" ng-click="columna = 'impuesto'; reverse = !reverse">%IV</a>
+            </th>
+          <th>Desactivar</th>
+          <th>Eliminar</th>
+          
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="articulo in vm.listaArticulos | filter:buscarArticulo | orderBy:columna: reverse" ng-if="articulo.estado === 'inactivo'">
+          <td>{{articulo.id}}</td>
+          <td>{{articulo.producto}}</td>
+          <td>{{articulo.impuesto}}</td>
+
+          
+           <td> <button type="button btn btn-danger" ng-click="vm.articulo('activo',articulo)">Activar</button>
+          </td>
+          <td> <button type="button btn btn-danger" ng-click="vm.articulo('eleminado',articulo)">eleminar</button>
+          </td>
+
+
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
