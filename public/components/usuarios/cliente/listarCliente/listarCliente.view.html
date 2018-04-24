@@ -72,7 +72,7 @@
 <section id="" class="">
     <div class="wrapperusuarios">
     <table class="table">
-        <h1 class="col-12">Lista de Hoteles</h1>
+        <h1 class="col-12">Usuarios activos</h1>
         <hr/>
         <thead class="table-primary">
             <tr>
@@ -81,9 +81,9 @@
                 <th>Nombre Completo</th>
                 <th>Correo electrónico</th>
                 <th>Teléfono</th>
-                <th> </th>
+                <th>Fecha de nacimiento</th>
+                <th>Dirección</th>
                 <th>Dirección exacta</th>
-                <th></th>
                 <th>Editar</th>
                 <th>Desactivar</th>
             </tr>
@@ -91,7 +91,7 @@
         <tbody>
             <tr ng-repeat="usuario in vm.listaClientes" ng-if="usuario.estado === 'activo'">
                 <td>{{usuario.cedula}}</td>
-                <td><img src="{{usuario.foto}}" alt="" width="100" height="100"></td>
+                <td><img src="{{usuario.foto}}" alt="" width="60" height="60"></td>
                 <td>{{usuario.obtenerNombreCompleto()}}</td>
                 <td>{{usuario.correo}}</td>
                 <td>{{usuario.telefono}}</td>
@@ -107,7 +107,7 @@
     </table>
     
     <table class="table">
-        <h1 class="col-12">Hoteles desactivados</h1>
+        <h1 class="col-12">Usuarios desactivados</h1>
         <hr/>
         <thead class="table-primary">
             <tr>
@@ -116,9 +116,9 @@
                 <th>Nombre Completo</th>
                 <th>Correo electrónico</th>
                 <th>Teléfono</th>
-                <th></th>
+                <th>Fecha de nacimiento</th>
+                <th>Dirección</th>
                 <th>Dirección exacta</th>
-                <th></th>
                 <th>Editar</th>
                 <th>Activar</th>
             </tr>

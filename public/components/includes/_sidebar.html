@@ -51,29 +51,29 @@
                     <ul>
                         <li>
                             <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.registrarClienteAdmin">
-                                Registrar Hoteles</a>
+                                Registrar cliente</a>
                         </li>
-                        <!-- <li>
-                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.registrarEntidades">Registrar Entidades</a>
-                        </li> -->
-                        <!-- <li>
-                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.registrarConvenio">Registrar Convenios</a>
-                        </li> -->
-                        <!-- <li>
-                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.registrarEncargadoAduana">Registrar Encargado de Aduanas</a>
-                        </li> -->
-                        <!-- <li>
-                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.repartidor">Registrar Repartidores</a>
-                        </li> -->
                         <li>
-                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.sucursales">Registar clientes</a>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.registrarEntidades">Registrar Entidades</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.registrarConvenio">Registrar Convenios</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.registrarEncargadoAduana">Registrar Encargado de Aduanas</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.repartidor">Registrar Repartidores</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.sucursales">Registar Sucursales</a>
                         </li>
                         <li>
                             <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.registrarEncargadoSucursal">Registrar encargado de sucursal</a>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.registrarArticulo">Registrar Articulo</a>
-                        </li> -->
+                        </li>
                     </ul>
                 </div>
 
@@ -81,9 +81,9 @@
                 <div id="listassadmin" class="collapse">
                     <ul>
                         <li>
-                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.listarCliente">Lista de hoteles</a>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.listarCliente">Lista de clientes</a>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.listarEncargadoSucursal">Lista de Encargados de Sucursal</a>
                         </li>
                         <li>
@@ -94,14 +94,14 @@
                         </li>
                         <li>
                             <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.listarEncargadoAduana">Lista de Encargados de Aduanas</a>
-                        </li> -->
-                        <!-- <li>
-                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.listarRepartidores">Lista de Repartidor</a>
-                        </li> -->
-                        <li>
-                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.listarsucursales">Lista de clientes</a>
                         </li>
-                        <!-- <li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.listarRepartidores">Lista de Repartidor</a>
+                        </li>
+                        <li>
+                            <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.listarsucursales">Lista de Sucursales</a>
+                        </li>
+                        <li>
                             <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.listarArticulo">Lista de Articulos</a>
                         </li>
                         <li>
@@ -109,7 +109,7 @@
                         </li>
                         <li>
                             <a class="text-capitalize"ng-show='vm.rol == 5' ui-sref="main.PaquetesAdmin">Lisa de Paquetes</a>
-                        </li> -->
+                        </li>
                     </ul>
                 </div>
 
@@ -119,7 +119,7 @@
                 <!-- <button type="button" class="btn btn-info" ng-show='vm.rol == 3' ui-sref="main.Repartidor">Paquetes</button> -->
 
                 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#encSucReg" ng-show='vm.rol == 2'> Registros</button>
-                <!-- <div id="encSucReg" class="collapse">
+                <div id="encSucReg" class="collapse">
                     <ul>
                         <li>
                             <a class="text-capitalize"ng-show='vm.rol == 2' ui-sref="main.repartidor">Registrar Repartidor</a>
@@ -129,11 +129,11 @@
                         </li>
 
                     </ul>
-                </div> -->
+                </div>
                 <button type="button" class="btn btn-info" ng-show='vm.rol == 2' ui-sref="main.listarRepartidoresSucursal">Repartidores</button>
                 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#encSucPaq" ng-show='vm.rol == 2'> Paquetes</button>
                 <div id="encSucPaq" class="collapse">
-                    <!-- <ul>
+                    <ul>
                         <li>
                             <a class="text-capitalize"ng-show='vm.rol == 2' ui-sref="main.paquetesEncargadoSucursal">Paquetes clientes</a>
                         </li>
@@ -141,7 +141,7 @@
                             <a class="text-capitalize"ng-show='vm.rol == 2' ui-sref="main.listarPaquetesConvenio">Paquetes de convenio</a>
                         </li>
 
-                    </ul> -->
+                    </ul>
                 </div>
 
 
