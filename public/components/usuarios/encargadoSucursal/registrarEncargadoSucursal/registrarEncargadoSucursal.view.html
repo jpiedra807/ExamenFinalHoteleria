@@ -3,7 +3,7 @@
     <div class="creditCardForm">
 
                     <div class="heading">
-                            <h1>Registro de Encargado de Sucursal</h1>
+                            <h1>Registro Clientes</h1>
                     </div>  
                     <hr>
             <div class="payment">
@@ -83,14 +83,17 @@
                         <input type="text" class="form-control" ng-model="vm.nuevoUsuario.contrasenna">
                     </div>
 
+                    <div class="form-group col-6">
+                        <h4>Seleccione el hotel</h4>
                     <select class="col-12" ng-model="vm.nuevoUsuario.sucursalAsignada">
-                        <option value="">Seleccione la Sucursal del usuario</option>
+                        <option value="">Seleccione el hotel</option>
                         <option ng-repeat="sucursal in vm.listaSucursales" value="{{sucursal.nombre}}">{{sucursal.nombre}}</option>
                     </select>
+                   </div>
 
 
-                    <div class="form-group" id="pay-now">
-                            <button type="submit" class="btn btn-default btnRegCliente" id="confirm-purchase">Registrar Encargado de Sucursal </button>
+                    <div class="form-group col-6" id="pay-now">
+                            <button type="submit" class="btn btn-default btnRegCliente" id="confirm-purchase">Registrar cliente</button>
                           </div>
 
 
