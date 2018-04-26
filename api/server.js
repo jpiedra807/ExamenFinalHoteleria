@@ -15,7 +15,7 @@ const express = require('express'),
  */
 let db = mongoose.connection,
     dburl = 'mongodb://<dbuser>:<dbpassword>@ds057176.mlab.com:57176/hoteleria',
-    port = 3000;
+    port = 4000;
 
 let server = app.listen(port,_server());
 
@@ -58,15 +58,34 @@ app.use( (req, res, next) => {
 /**
  * Exportamos las funcionalidades
  */
+
+ ///Aqui van agregados todos los componentes amiguitos!!
 const index = require('./index'),
       usuarios = require('./components/usuarios/usuarios.route'),
-      vehiculos = require('./components/vehiculos/vehiculos.route');
+      articulos = require ('./components/articulos/articulos.route.js'),
+      entidades = require('./components/entidades/entidades.route'),
+      convenios = require('./components/convenios/convenios.route'),
+      paquetes = require ('./components/paquetes/paquetes.route'),
+      tarjetas = require('./components/tarjetas/tarjetas.route'),
+      sucursales = require('./components/sucursales/sucursales.route'),
+      nodeMailer = require('./components/mail/mail.route'),
+      paquetesConvenio = require('./components/paquetesConvenio/paquetesConvenio.route');
+      
 
 /**
  * Se definien las rutas de ExpressJS
  */
+
+///Aqui van agregados todos los componentes amiguitos!!
 app.use('/api', usuarios);
-app.use('/api', vehiculos);
+app.use ('/api', articulos);
+app.use('/api', entidades);
+app.use('/api', convenios);
+app.use ('/api', paquetes);
+app.use('/api', tarjetas);
+app.use('/api', sucursales);
+app.use('/api', nodeMailer);
+app.use('/api', paquetesConvenio);
 app.use('/', index);
 
 /// Se guarda todo lo que se ha realizado

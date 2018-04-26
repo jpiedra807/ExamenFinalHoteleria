@@ -1,0 +1,25 @@
+<div id="dashboard">
+  <section id="" class="container row">
+
+    <div class="col-7">
+      <h1>REGISTRO DE ARTICULO</h1>
+      <form ng-submit="vm.editArticulo(vm.edicionDeArticulo)">
+
+     
+
+        <div class="form-group">
+          <label for="">PRODUCTO</label>
+          <input type="text" class="form-control" ng-model="vm.edicionDeArticulo.producto" required>
+        </div>
+        <div class="form-group">
+          <label for="">IMPUESTO</label>
+          <input type="text" class="form-control" ng-model="vm.edicionDeArticulo.impuesto" required>
+        </div>
+        <button class="btn btn-secondary" type="submit">Editar</button>
+       
+
+      </form>
+    </div>
+  </section>
+
+</div>

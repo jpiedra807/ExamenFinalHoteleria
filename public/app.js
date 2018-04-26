@@ -1,5 +1,5 @@
 (() => {
   'use strict';
   angular
-  .module('tallerRapidito', ['appRoutes', 'ngMessages', 'duScroll', 'ngFileUpload']);
+  .module('correos', ['appRoutes', 'ngFileUpload', 'ngMap']);
 })();

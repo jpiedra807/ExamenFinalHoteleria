@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="">
+    <div class="wrapper">
+      <form class="login-form" ng-submit="vm.preRegistrarCliente(vm.nuevoCliente)">
+
+        <div class="row">
+          <div class="col-md-6">
+
+            <label for="">Cédula</label>
+            <input type="text" class="form-control" ng-model="vm.nuevoCliente.cedula" required>
+
+            <label for="">Fotografía</label>
+            <input type="file" class="form-control" ng-model="vm.nuevoCliente.foto" img-upload required>
+
+            <label for="">Primer nombre</label>
+            <input type="text" class="form-control" ng-model="vm.nuevoCliente.primerNombre" required>
+
+            <label for="">Segundo nombre</label>
+            <input type="text" class="form-control" ng-model="vm.nuevoCliente.segundoNombre">
+
+            <label for="">Primer apellido</label>
+            <input type="text" class="form-control" ng-model="vm.nuevoCliente.primerApellido" required>
+
+            <label for="">Segundo apellido</label>
+            <input type="text" class="form-control" ng-model="vm.nuevoCliente.segundoApellido">
+
+            <label for="">Correo electrónico</label>
+            <input type="email" class="form-control" ng-model="vm.nuevoCliente.correo" required>
+          </div>
+
+          <div class="col-md-6">
+
+            <label for="">Teléfono</label>
+            <input type="text" class="form-control" ng-model="vm.nuevoCliente.telefono" required>
+
+            <label for="">Fecha de nacimiento</label>
+            <input type="date" class="form-control" ng-model="vm.nuevoCliente.fechaNacimiento" required>
+
+            <label for="">Provincia</label>
+            <input list="sltProvincia" class="form-control" name="sltProvincia" ng-change="vm.rellenarCantones(vm.nuevoCliente.provincia)"
+              ng-model="vm.nuevoCliente.provincia" required>
+            <datalist id="sltProvincia">
+              <option ng-repeat="provincia in vm.provincias track by provincia._id" value="{{provincia.name}}" id="{{provincia._id}}">
+            </datalist>
+
+            <label for="">Cantón</label>
+            <input list="sltCanton" name="sltCanton" class="form-control" ng-change="vm.rellenarDistrito(vm.nuevoCliente.canton)" ng-model="vm.nuevoCliente.canton"
+              required>
+            <datalist id="sltCanton">
+              <option ng-repeat="canton in vm.cantones" value="{{canton.name}}">
+            </datalist>
+
+            <label for="">Distrito</label>
+            <input list="sltDistrito" name="sltDistrito" class="form-control" ng-model="vm.nuevoCliente.distrito" required>
+            <datalist id="sltDistrito">
+              <option ng-repeat="distrito in vm.distritos" value="{{distrito.name}}">
+            </datalist>
+
+            <label for="">Dirección Exacta</label>
+            <input type="text" class="form-control" ng-model="vm.nuevoCliente.direccionExacta" required>
+
+            <label for="">Asignar Sucursal</label>
+            <select class="form-control" ng-model="vm.nuevoCliente.sucursalAsignada" required>
+              <option value="">Seleccione una sucursal</option>
+              <option ng-repeat="sucursal in vm.listaSucursales" value="{{sucursal.nombre}}">{{sucursal.nombre}}</option>
+            </select>
+     
+          </div>
+
+          <!-- <ng-map id="map" center='current-position'
+            geo-fallback-center="[40.74, -74.18]"
+            geo-callback="vm.callbackFunc('you')"
+            ></ng-map> -->
+
+
+            <div class="col-md-6">
+                <label for="">Contraseña</label>
+                <input type="password" class="form-control" ng-model="vm.nuevoCliente.contrasenna" required>
+            </div>
+
+             <div class="col-md-6">   
+              <button type="submit" class="btn">Registrar</button>
+            </div>
+          
+        </div>
+
+      
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!--<button ng-click="vm.getLocation()">Try It</button>-->
+
+
+
+
+
+
+
+<!--<div id="map"></div>
+        <div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{googleMapsUrl}}"></div>
+        
+      </div>-->

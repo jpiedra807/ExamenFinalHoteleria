@@ -1,0 +1,93 @@
+
+<div id="dashboard">
+
+  <div class="container-fluid">
+<h3>Repartidores activos</h3>
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <!-- <th>Foto</th> -->
+        <th>Cédula</th>
+        <th>Nombre completo </th>
+        <th>apellidos</th>
+        <th>Correo electrónico</th>
+        <th>Teléfono</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Vehículo</th>
+        <th>Numero de licencia</th>
+        <th>Licencia</th>
+        <th>Vencimiento de licencia</th>
+        <th>Sucursal Asignada</th>
+        
+
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr ng-repeat="repartidor in vm.listaRepartidores" ng-if="repartidor.estado === 'activo'">
+        <!-- <td>{{repartidor.foto}}</td> -->
+        <td>{{repartidor.cedula}}</td>
+        <td>{{repartidor.primerNombre}} {{repartidor.segundoNombre}}</td>
+        <td>{{repartidor.primerApellido}} {{repartidor.segundoApellido}}</td>
+        <td>{{repartidor.correo}}</td>
+        <td>{{repartidor.telefono}}</td>
+        <td>{{repartidor.fechaNacimiento}}</td>
+        <td>{{repartidor.vehiculo}}</td>
+        <td>{{repartidor.listaLicencias[0].numLicencia}}</td>
+        <td>{{repartidor.listaLicencias[0].tipoLicencia}}</td>
+        <td>{{repartidor.listaLicencias[0].vencimiento}}</td>
+        <td>{{repartidor.sucursalAsignada}}</td>
+        <td><button class="btn buttonall" ng-click="vm.editRepartidor(repartidor)" type="submit">Editar</button></td>
+        
+       
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container-fluid">
+  <h3>Repartidores inactivos</h3>
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <!-- <th>Foto</th> -->
+        <th>Cédula</th>
+        <th>Nombre completo </th>
+        <th>apellidos</th>
+        <th>Correo electrónico</th>
+        <th>Teléfono</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Vehículo</th>
+        <th>Numero de licencia</th>
+        <th>Licencia</th>
+        <th>Vencimiento de licencia</th>
+        <th>Sucursal Asignada</th>
+        
+
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr ng-repeat="usuario in vm.listaUsuarios" ng-if="usuario.estado === 'inactivo' && usuario.tipo === '3'">
+        <!-- <td>{{repartidor.foto}}</td> -->
+        <td>{{repartidor.cedula}}</td>
+        <td>{{repartidor.primerNombre}} {{repartidor.segundoNombre}}</td>
+        <td>{{repartidor.primerApellido}} {{repartidor.segundoApellido}}</td>
+        <td>{{repartidor.correo}}</td>
+        <td>{{repartidor.telefono}}</td>
+        <td>{{repartidor.fechaNacimiento}}</td>
+        <td>{{repartidor.vehiculo}}</td>
+        <td>{{repartidor.listaLicencias[0].numLicencia}}</td>
+        <td>{{repartidor.listaLicencias[0].tipoLicencia}}</td>
+        <td>{{repartidor.listaLicencias[0].vencimiento}}</td>
+        <td>{{repartidor.sucursalAsignada}}</td>
+        <td><button class="btn buttonall" ng-click="vm.editRepartidor(repartidor)" type="submit">Editar</button></td>
+        
+       
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+

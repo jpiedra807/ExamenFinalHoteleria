@@ -1,0 +1,17 @@
+<section>
+  <table class="table table-responsive table-striped text-centered col-12 offset-1">
+    <legend class="col-12 offset-1">Entidades registradas</legend>
+    <thead class="thead-dark">
+      <tr>
+        <th>Nombre</th>
+        <th>Cédula jurídica</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="entidad in vm.listaEntidades">
+        <td>{{entidad.nombre}}</td>
+        <td>{{entidad.cedulaJuridica}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>

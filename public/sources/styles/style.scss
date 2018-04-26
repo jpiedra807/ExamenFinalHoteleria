@@ -5,8 +5,9 @@
 // Bootstrap
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 
+
 // -----------------------------------------------------------------------------
 // Estilos de la aplicación
 // -----------------------------------------------------------------------------
 
-@import "general.style","components/landingPage.style", "components/sidebar.style";
+@import "general.style", "landingPage.style", "mainDashboard.style", "components/sidebar.style", "components/footer.style", "components/header.style";
