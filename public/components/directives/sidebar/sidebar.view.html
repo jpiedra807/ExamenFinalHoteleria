@@ -1,12 +1,27 @@
+<aside class="bg-black">
+  <ul class="nav flex-column">
+    <li class="nav-item dropright">
+      <a class="nav-link text-white dropdown-toggle py-5 mt-4" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="d-inline">
+          <i class="fas fa-car"></i>
+        </div>
+        <p class="d-inline">Vehiculos</p>
+      </a>
 
-<div id="sidebar">
-    <img src="../../sources/images/logo.png" class="float-left">
-    <div class="sidenav">
-      <a href="#">Registrar Usuarios</a>
-      <a href="#">Lista de Usuarios</a>
-      <a href="#">Paquetes</a>
-      <a href="#">Registrar Entidades</a>
-      <a href="#">Registrar Convenios</a>
-      <a ui-sref="repartidor">Registrar Repartidor</a>
-    </div>
-  </div>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" ui-sref="main.listarVehiculos">Visualizar vehiculos</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" ui-sref="main.registroVehiculos">Registrar Vehiculos</a>
+      </div>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link text-white py-5" ui-sref="main.verPerfil" href="">
+        <div class="d-inline">
+          <i class="fas fa-user"></i>
+        </div>
+        <p class="d-inline">Mi perfil</p>
+      </a>
+    </li>
+  </ul>
+</aside>

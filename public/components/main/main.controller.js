@@ -1,22 +1,19 @@
-(() => {
+(() =>{
   'use strict';
   angular
-    .module('correos')
-    .controller('controladorMain', controladorMain);
+  .module('tallerRapidito')
+  .controller('mainController', mainController);
 
-    controladorMain.$inject = ['$state','$location', 'servicioLogin', 'servicioUsuarios'];
+  mainController.$inject = ['$state', 'loginService'];
 
-  function controladorMain($state, $location, servicioLogin, servicioUsuarios) {
+  function mainController($state, loginService){
+
+    const userAuth = loginService.getAuthUser();
+
+    if(userAuth == undefined){
+      $state.go('inicioSesion');
+    }
+
     const vm = this;
-
-    vm.rol = servicioUsuarios.getRol();
-    vm.listaPaquetes = servicioUsuarios.getPaquete();
-
-    vm.cerrarSesion = ()=>{
-      servicioLogin.cerrarSesion();
-
-    }    
-    vm.usuarioActivo = servicioUsuarios.getUsuarioActivo();
-    
-  }
+  };
 })();

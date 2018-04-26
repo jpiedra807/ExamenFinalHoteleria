@@ -1,27 +1,30 @@
 (() => {
   'use strict';
   angular
-    .module('correos')
-    .controller('controladorLogin', controladorLogin);
+  .module('tallerRapidito')
+  .controller('loginController', loginController);
 
-  controladorLogin.$inject = ['$location', 'servicioLogin', 'servicioUsuarios'];
+  loginController.$inject = ['$state', 'loginService'];
 
-  function controladorLogin($location, servicioLogin, servicioUsuarios) {
-    let vm = this;
-    vm.listaUsuarios = servicioUsuarios.getUsuarios();
-    vm.usuario = {};
+  function loginController($state, loginService){
+    const vm = this;
 
+    vm.credentials = {};
 
-    vm.inicarSesion = (pCredenciales) => {
-      let inicioCorrecto = servicioLogin.inicioSesion(pCredenciales);
+    vm.login = (pcredentials) => {
 
-      if (inicioCorrecto == true) {
-        // swal("Datos correctos", "Sesion iniciada correctamente", "success");
-          $location.path('main/dashboard');
+      let inicioExitoso = loginService.logIn(pcredentials);
+
+      if(inicioExitoso == true){
+        $state.go('main');
+      }else{
+        swal({
+          title: "Inicio de sesión fallido",
+          text: "Los datos ingresados son incorrectos",
+          icon: "error",
+          button: "Aceptar",
+        });
       }
-      else {
-        swal("Datos erroneos", "Intente nuevamente", "error");
-      }
-    }
+    };
   }
 })();
